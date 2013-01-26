@@ -8,6 +8,17 @@ TARGET_BOARD_PLATFORM := unknown
 TARGET_CPU_ABI := armeabi
 TARGET_BOOTLOADER_BOARD_NAME := roamer
 
+#WiFI related definitions
+BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+WPA_SUPPLICANT_VERSION           := VER_0_6_X
+BOARD_WLAN_DEVICE                := BCM4319
+WIFI_BAND                        := 802_11_ABG
+WIFI_DRIVER_MODULE_PATH          := "/lib/modules/dhd.ko"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4319.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4319_apsta.bin"
+WIFI_DRIVER_MODULE_NAME          := "dhd"
+WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0 firmware_path=/vendor/firmware/fw_bcm4319.bin nvram_path=/vendor/firmware/nv4319.txt"
+
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x02600000
 BOARD_PAGE_SIZE := 0x00000800

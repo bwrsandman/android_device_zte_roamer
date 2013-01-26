@@ -20,5 +20,5 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo roamer-eng
-add_lunch_combo roamer-userdebug
+add_lunch_combo full_roamer-eng
+add_lunch_combo full_roamer-userdebug
