@@ -37,14 +37,6 @@ http://www.apache.org/licenses/LICENSE-2.0
   $ ./get-rommanager
 ```
 
-###  Setup device
-After the source downloads, ensure you are in the root of the source code (`cd ~/android/system`), connect phone to USB and make sure debugging is available for adb pulls:
-```bash
-  $ cd device/zte/roamer/
-  $ ./extract-files.sh
-```
-This pulls files from a working roamer with most variants of shipped ZTE ROM.
-
 ###  Add to local manifest
 Add the following to `.repo/local_manifests/zte_roamer.xml`:
 ```xml
@@ -59,6 +51,14 @@ Update your repo:
 ```bash
 $ repo sync
 ```
+
+###  Setup device
+After the source downloads, ensure you are in the root of the source code (`cd ~/android/system`), connect phone to USB and make sure debugging is available for adb pulls:
+```bash
+  $ cd device/zte/roamer/
+  $ ./extract-files.sh
+```
+This pulls files from a working roamer with most variants of shipped ZTE ROM.
 
 ###  Setup environment
 ```bash
