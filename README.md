@@ -49,11 +49,11 @@ This pulls files from a working roamer with most variants of shipped ZTE ROM.
 Add the following to `.repo/local_manifests/zte_roamer.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-   <manifest>
-     <project name="bwrsandman/android_device_zte_roamer" path="device/zte/roamer" remote="github" revision="gingerbread" />
-	   <project name="bwrsandman/android_kernel_zte_roamer" path="kernel/zte/roamer" remote="github" revision="gingerbread" />
-	   <project name="bwrsandman/android_vendor_zte_roamer" path="vendor/zte/roamer" remote="github" revision="gingerbread" />
-   </manifest>
+  <manifest>
+    <project name="bwrsandman/android_device_zte_roamer" path="device/zte/roamer" remote="github" revision="gingerbread" />
+    <project name="bwrsandman/android_kernel_zte_roamer" path="kernel/zte/roamer" remote="github" revision="gingerbread" />
+    <project name="bwrsandman/android_vendor_zte_roamer" path="vendor/zte/roamer" remote="github" revision="gingerbread" />
+  </manifest>
 ```
 Update your repo:
 ```bash
