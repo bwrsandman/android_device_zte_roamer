@@ -10,6 +10,12 @@ Copyright (C) 2011 The CyanogenMod Project
 http://www.apache.org/licenses/LICENSE-2.0
 
 
+## Requirements
+ * perl < 5.18
+ * jdk 6
+ * python 2
+
+
 ## Description
 
   This repository is for CM7 on ZTE Roamer.
