@@ -99,3 +99,22 @@ with
 ```perl
 my $preprocessor = "/usr/bin/gcc -E -x c++";
 ```
+
+### Python scripts output errors
+On ArchLinux and other platforms, the default python version is python3. 
+The CyanogenMod project uses python2 which causes some syntax errors such as:
+```
+  File "external/qemu/android/tools/gen-hw-config.py", line 52
+    print "Usage: %s source target\n" % os.path.basename(sys.argv[0])
+                                    ^
+SyntaxError: invalid syntax
+```
+This is remedied by replacing:
+```
+#!/usr/bin/env python
+```
+with:
+```
+#!/usr/bin/env python2
+```
+in associated python scripts.
