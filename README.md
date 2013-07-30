@@ -11,7 +11,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 
 ## Requirements
- * perl < 5.18
+ * perl
  * jdk 6
  * python 2
 
