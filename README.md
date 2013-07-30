@@ -15,6 +15,12 @@ http://www.apache.org/licenses/LICENSE-2.0
   This repository is for CM7 on ZTE Roamer.
 
   It is still a work in progress.
+  
+
+## Requirements
+ * perl
+ * jdk 6
+ * python 2
 
 
 ## How To Build CM7 for ZTE Roamer
@@ -71,3 +77,44 @@ This pulls files from a working roamer with most variants of shipped ZTE ROM.
   $ make acp # (to avoid errors on distributed building)
   $ make bacon
 ```
+
+## Troubleshooting
+
+### `Unknown parameter a interfaceName for tags/attrs`
+If the build fails while running `external/webkit/WebCore/dom/make_names.pl`, such as:
+```
+target Generated: libwebcore <= external/webkit/WebCore/dom/make_names.pl
+given is experimental at external/webkit/WebCore/dom/make_names.pl line 207.
+when is experimental at external/webkit/WebCore/dom/make_names.pl line 208.
+when is experimental at external/webkit/WebCore/dom/make_names.pl line 211.
+Unknown parameter a interfaceName for tags/attrs
+make: *** [out/target/product/roamer/obj/STATIC_LIBRARIES/libwebcore_intermediates/WebCore/HTMLNames.h] Error 255
+```
+
+Edit `external/webkit/WebCore/dom/make_names.pl` and replace 
+```perl
+my $preprocessor = "/usr/bin/gcc -E -P -x c++";
+```
+with 
+```perl
+my $preprocessor = "/usr/bin/gcc -E -x c++";
+```
+
+### Python scripts output errors
+On ArchLinux and other platforms, the default python version is python3. 
+The CyanogenMod project uses python2 which causes some syntax errors such as:
+```
+  File "external/qemu/android/tools/gen-hw-config.py", line 52
+    print "Usage: %s source target\n" % os.path.basename(sys.argv[0])
+                                    ^
+SyntaxError: invalid syntax
+```
+This is remedied by replacing:
+```
+#!/usr/bin/env python
+```
+with:
+```
+#!/usr/bin/env python2
+```
+in associated python scripts.
