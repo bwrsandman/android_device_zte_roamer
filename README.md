@@ -34,7 +34,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 ###  Do repo init & sync
 ```bash
   $ repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
-  $ repo sync -j16
+  $ repo sync -j16 -c
 ```
 
 ###  Setup vendor
