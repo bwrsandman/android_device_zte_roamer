@@ -80,6 +80,14 @@ This pulls files from a working roamer with most variants of shipped ZTE ROM.
 
 ## Troubleshooting
 
+### "device/htc/ace/ace.mk" does not exist.
+If running make results in the following error:
+```
+build/core/product_config.mk:196: *** _nic.PRODUCTS.[[vendor/cyanogen/products/cyanogen_ace.mk]]: "device/htc/ace/ace.mk" does not exist.  Stop.
+Device roamer not found. Attempting to retrieve device repository from CyanogenMod Github (http://github.com/CyanogenMod).
+```
+remove `vendor/cyanogen/products/AndroidProducts.mk`
+
 ### `Unknown parameter a interfaceName for tags/attrs`
 If the build fails while running `external/webkit/WebCore/dom/make_names.pl`, such as:
 ```
