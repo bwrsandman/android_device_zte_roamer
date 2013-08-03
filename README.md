@@ -126,3 +126,8 @@ with:
 #!/usr/bin/env python2
 ```
 in associated python scripts.
+
+The following command should find and fix every occurance:
+```bash
+find . -name '*.py' | xargs sed -r -i 's,#!([ tab]*/usr/(local/)?bin/(env )?)?python[ tab]*$,#!/usr/bin/env python2,g'
+```
