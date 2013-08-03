@@ -74,8 +74,12 @@ This pulls files from a working roamer with most variants of shipped ZTE ROM.
 
 ###  Build CM7
 ```bash
-  $ make acp # (to avoid errors on distributed building)
-  $ make bacon
+  $ make otapackage
+```
+To speed up the build time, use the `-j` to specify the number of cores to use. In general I like to use the number of cores + 1.
+Example:
+```bash
+  $ make -j9 otapackage
 ```
 
 ## Troubleshooting
