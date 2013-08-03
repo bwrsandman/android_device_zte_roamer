@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter roamer,$(TARGET_DEVICE)),)
-include $(call all-makefiles-under,$(LOCAL_PATH))
+ifneq ($(TARGET_BOOTLOADER_BOARD_NAME), roamer)
+    include $(call all-named-subdir-makefiles, recovery libaudio libril libcamera libgralloc libcopybit)
 endif
