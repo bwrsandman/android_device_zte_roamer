@@ -31,19 +31,15 @@ http://www.apache.org/licenses/LICENSE-2.0
   $ cd ~/android/system
 ```
 
-###  Do repo init & sync
+### Fetch the source
+This is likely to take a while depending on your connection.
+
+####  Init Repo
 ```bash
   $ repo init -u git://github.com/CyanogenMod/android.git -b gingerbread
-  $ repo sync -j16 -c
 ```
 
-###  Setup vendor
-```bash
-  $ cd vendor/cyanogen/
-  $ ./get-rommanager
-```
-
-###  Add to local manifest
+####  Add Roamer to local manifest
 Add the following to `.repo/local_manifests/zte_roamer.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -53,9 +49,16 @@ Add the following to `.repo/local_manifests/zte_roamer.xml`:
     <project name="bwrsandman/android_vendor_zte_roamer" path="vendor/zte/roamer" remote="github" revision="gingerbread" />
   </manifest>
 ```
-Update your repo:
+
+#### Sync Repo
 ```bash
-$ repo sync
+  $ repo sync -j16 -c
+```
+
+###  Setup vendor
+```bash
+  $ cd vendor/cyanogen/
+  $ ./get-rommanager
 ```
 
 ###  Setup device
